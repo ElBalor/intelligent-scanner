@@ -8,6 +8,7 @@ interface ExtractionResult {
   date?: string;
   total_amount?: number;
   category?: string;
+  transaction_status?: string;
   confidence: number;
 }
 
@@ -41,6 +42,7 @@ export default function ResultsDisplay({
         result.total_amount ? `$${result.total_amount.toFixed(2)}` : "N/A",
       ],
       ["Category", result.category || "N/A"],
+      ["Transaction Status", result.transaction_status || "N/A"],
       ["Confidence", `${(result.confidence * 100).toFixed(1)}%`],
     ];
 
@@ -90,12 +92,15 @@ export default function ResultsDisplay({
         <p className="text-cyan-300 mb-3">
           AI has processed your document and extracted the following information
         </p>
-        
+
         {/* Document Classification */}
         <div className="inline-flex items-center space-x-2 bg-slate-800/60 rounded-full px-4 py-2 border border-cyan-400/30">
           <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
           <span className="text-sm font-medium text-cyan-200">
-            Classified as: <span className="text-green-400 font-semibold">{result.category || 'Other'}</span>
+            Classified as:{" "}
+            <span className="text-green-400 font-semibold">
+              {result.category || "Other"}
+            </span>
           </span>
         </div>
       </div>
@@ -261,6 +266,40 @@ export default function ResultsDisplay({
             </div>
             <p className="text-lg font-semibold text-cyan-100">
               {result.category || "Other"}
+            </p>
+          </div>
+
+          <div className="bg-slate-800/60 rounded-xl p-4 border border-cyan-400/30 shadow-sm">
+            <div className="flex items-center mb-2">
+              <div className="w-8 h-8 bg-indigo-500/20 rounded-lg flex items-center justify-center mr-3">
+                <svg
+                  className="w-4 h-4 text-indigo-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <span className="font-medium text-cyan-200">Status</span>
+            </div>
+            <p
+              className={`text-lg font-semibold ${
+                result.transaction_status === "Success"
+                  ? "text-green-400"
+                  : result.transaction_status === "Pending"
+                  ? "text-yellow-400"
+                  : result.transaction_status === "Failed"
+                  ? "text-red-400"
+                  : "text-cyan-100"
+              }`}
+            >
+              {result.transaction_status || "Unknown"}
             </p>
           </div>
         </div>
