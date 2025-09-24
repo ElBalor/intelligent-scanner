@@ -87,13 +87,21 @@ export default function ResultsDisplay({
         <h3 className="text-xl font-bold text-cyan-100 mb-2">
           Data Extracted Successfully!
         </h3>
-        <p className="text-cyan-300">
+        <p className="text-cyan-300 mb-3">
           AI has processed your document and extracted the following information
         </p>
+        
+        {/* Document Classification */}
+        <div className="inline-flex items-center space-x-2 bg-slate-800/60 rounded-full px-4 py-2 border border-cyan-400/30">
+          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+          <span className="text-sm font-medium text-cyan-200">
+            Classified as: <span className="text-green-400 font-semibold">{result.category || 'Other'}</span>
+          </span>
+        </div>
       </div>
 
       {/* Confidence Score */}
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-100">
+      <div className="bg-gradient-to-r from-slate-800/60 to-slate-700/60 rounded-2xl p-6 border border-cyan-400/30">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center">
@@ -158,9 +166,9 @@ export default function ResultsDisplay({
         </h4>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+          <div className="bg-slate-800/60 rounded-xl p-4 border border-cyan-400/30 shadow-sm">
             <div className="flex items-center mb-2">
-              <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+              <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center mr-3">
                 <svg
                   className="w-4 h-4 text-blue-600"
                   fill="none"
@@ -182,9 +190,9 @@ export default function ResultsDisplay({
             </p>
           </div>
 
-          <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+          <div className="bg-slate-800/60 rounded-xl p-4 border border-cyan-400/30 shadow-sm">
             <div className="flex items-center mb-2">
-              <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+              <div className="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center mr-3">
                 <svg
                   className="w-4 h-4 text-purple-600"
                   fill="none"
@@ -206,9 +214,9 @@ export default function ResultsDisplay({
             </p>
           </div>
 
-          <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+          <div className="bg-slate-800/60 rounded-xl p-4 border border-cyan-400/30 shadow-sm">
             <div className="flex items-center mb-2">
-              <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+              <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mr-3">
                 <svg
                   className="w-4 h-4 text-green-600"
                   fill="none"
@@ -232,9 +240,9 @@ export default function ResultsDisplay({
             </p>
           </div>
 
-          <div className="bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+          <div className="bg-slate-800/60 rounded-xl p-4 border border-cyan-400/30 shadow-sm">
             <div className="flex items-center mb-2">
-              <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+              <div className="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center mr-3">
                 <svg
                   className="w-4 h-4 text-orange-600"
                   fill="none"
