@@ -84,10 +84,10 @@ export default function ResultsDisplay({
             />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">
+        <h3 className="text-xl font-bold text-cyan-100 mb-2">
           Data Extracted Successfully!
         </h3>
-        <p className="text-gray-600">
+        <p className="text-cyan-300">
           AI has processed your document and extracted the following information
         </p>
       </div>
@@ -112,17 +112,17 @@ export default function ResultsDisplay({
               </svg>
             </div>
             <div>
-              <p className="font-semibold text-gray-900">AI Confidence</p>
-              <p className="text-sm text-gray-600">
+              <p className="font-semibold text-cyan-100">AI Confidence</p>
+              <p className="text-sm text-cyan-300">
                 How accurate the extraction is
               </p>
             </div>
           </div>
           <div className="text-right">
-            <div className="text-2xl font-bold">
+            <div className="text-2xl font-bold text-cyan-100">
               {formatConfidence(result.confidence)}
             </div>
-            <div className="w-20 bg-gray-200 rounded-full h-2 mt-2">
+            <div className="w-20 bg-slate-600 rounded-full h-2 mt-2">
               <div
                 className={`h-2 rounded-full transition-all duration-1000 ${
                   result.confidence > 0.8
@@ -140,7 +140,7 @@ export default function ResultsDisplay({
 
       {/* Extracted Fields */}
       <div className="space-y-4">
-        <h4 className="text-lg font-semibold text-gray-900 flex items-center">
+        <h4 className="text-lg font-semibold text-cyan-100 flex items-center">
           <svg
             className="w-5 h-5 mr-2 text-blue-600"
             fill="none"
@@ -175,9 +175,9 @@ export default function ResultsDisplay({
                   />
                 </svg>
               </div>
-              <span className="font-medium text-gray-700">Vendor</span>
+              <span className="font-medium text-cyan-200">Vendor</span>
             </div>
-            <p className="text-lg font-semibold text-gray-900">
+            <p className="text-lg font-semibold text-cyan-100">
               {result.vendor || "Not detected"}
             </p>
           </div>
@@ -199,9 +199,9 @@ export default function ResultsDisplay({
                   />
                 </svg>
               </div>
-              <span className="font-medium text-gray-700">Date</span>
+              <span className="font-medium text-cyan-200">Date</span>
             </div>
-            <p className="text-lg font-semibold text-gray-900">
+            <p className="text-lg font-semibold text-cyan-100">
               {result.date || "Not detected"}
             </p>
           </div>
@@ -223,7 +223,7 @@ export default function ResultsDisplay({
                   />
                 </svg>
               </div>
-              <span className="font-medium text-gray-700">Total Amount</span>
+              <span className="font-medium text-cyan-200">Total Amount</span>
             </div>
             <p className="text-2xl font-bold text-green-600">
               {result.total_amount
@@ -249,9 +249,9 @@ export default function ResultsDisplay({
                   />
                 </svg>
               </div>
-              <span className="font-medium text-gray-700">Category</span>
+              <span className="font-medium text-cyan-200">Category</span>
             </div>
-            <p className="text-lg font-semibold text-gray-900">
+            <p className="text-lg font-semibold text-cyan-100">
               {result.category || "Other"}
             </p>
           </div>
@@ -260,9 +260,9 @@ export default function ResultsDisplay({
 
       {/* Raw Text Preview */}
       <div className="space-y-3">
-        <h4 className="text-lg font-semibold text-gray-900 flex items-center">
+        <h4 className="text-lg font-semibold text-cyan-100 flex items-center">
           <svg
-            className="w-5 h-5 mr-2 text-gray-600"
+            className="w-5 h-5 mr-2 text-cyan-300"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -276,8 +276,8 @@ export default function ResultsDisplay({
           </svg>
           Raw Text Preview
         </h4>
-        <div className="max-h-40 overflow-y-auto p-4 bg-gray-50 rounded-xl border border-gray-200">
-          <pre className="text-sm text-gray-700 whitespace-pre-wrap leading-relaxed">
+        <div className="max-h-40 overflow-y-auto p-4 bg-gray-900 rounded-xl border border-gray-700">
+          <pre className="text-sm text-gray-100 whitespace-pre-wrap leading-relaxed font-mono">
             {result.raw_text}
           </pre>
         </div>
@@ -285,7 +285,7 @@ export default function ResultsDisplay({
 
       {/* Action Buttons */}
       <div className="space-y-4">
-        <h4 className="text-lg font-semibold text-gray-900 flex items-center">
+        <h4 className="text-lg font-semibold text-cyan-100 flex items-center">
           <svg
             className="w-5 h-5 mr-2 text-blue-600"
             fill="none"
